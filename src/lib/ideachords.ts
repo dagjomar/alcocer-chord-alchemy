@@ -77,17 +77,16 @@ export type GenOptions = {
   enforceStart?: Roman;
 };
 
-// Return a 4-chord sequence of degrees following the style guidance
+// Return a 4-chord sequence of degrees with no repeats (choose without replacement)
 export function generateDegreeSequence(opts: GenOptions = {}): Roman[] {
   const first = opts.enforceStart ?? weightedStart();
-  // Build the rest freely from the set, allowing tasteful repetitions
-  const pool: Roman[] = ["ii", "IV", "vi", "V"]; // allowed
+  // Choose remaining chords without replacement to avoid duplicates
+  const pool: Roman[] = (["ii", "IV", "vi", "V"] as Roman[]).filter((d) => d !== first);
   const seq: Roman[] = [first];
-  for (let i = 1; i < 4; i++) {
-    // Prefer motion away from V to avoid starting or lingering dominance
-    const candidates = pool.filter((d) => !(seq[i - 1] === "V" && d === "V"));
-    const choice = candidates[Math.floor(Math.random() * candidates.length)];
-    seq.push(choice);
+  while (seq.length < 4) {
+    const idx = Math.floor(Math.random() * pool.length);
+    const next = pool.splice(idx, 1)[0];
+    seq.push(next);
   }
   return seq;
 }

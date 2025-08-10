@@ -56,6 +56,7 @@ const Index = () => {
   const [selectedKey, setSelectedKey] = useState<MajorKey>("Eb");
   const [startChord, setStartChord] = useState("");
   const [result, setResult] = useState<{ key: MajorKey; progression: Progression } | null>(null);
+  const [tab, setTab] = useState<"random" | "key" | "start">("random");
 
   useEffect(() => {
     document.title = "Idea Chord Progression Maker | ii–IV–vi–V";
@@ -102,7 +103,7 @@ const Index = () => {
           </p>
 
           <div className="mt-8" id="maker">
-            <Tabs defaultValue="random" className="w-full">
+            <Tabs value={tab} onValueChange={(v) => { setTab(v as "random" | "key" | "start"); setResult(null); }} className="w-full">
               <TabsList className="bg-secondary/40">
                 <TabsTrigger value="random">Random</TabsTrigger>
                 <TabsTrigger value="key">Pick Key</TabsTrigger>
