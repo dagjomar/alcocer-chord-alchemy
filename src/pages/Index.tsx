@@ -15,6 +15,7 @@ import {
   formatProgression,
   type Progression,
 } from "@/lib/ideachords";
+import { Link } from "react-router-dom";
 
 // A big, beautiful chord tile
 function ChordTile({ name, roman }: { name: string; roman: string }) {
@@ -169,6 +170,48 @@ const Index = () => {
             </p>
           </div>
         </div>
+      </section>
+
+      {/* YouTube Preview Section */}
+      <section className="container max-w-5xl py-8">
+        <Card className="bg-secondary/20 border-secondary/30">
+          <CardContent className="p-6">
+            <div className="flex flex-col md:flex-row items-start gap-4">
+              {/* YouTube Thumbnail */}
+              <div className="flex-shrink-0">
+                <div className="relative w-48 h-27 rounded-lg overflow-hidden">
+                  <img 
+                    src="https://img.youtube.com/vi/H-tqv602Mtg/mqdefault.jpg" 
+                    alt="YouTube video thumbnail"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white ml-1" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Content */}
+              <div className="flex-1 min-w-0">
+                <h3 className="font-semibold text-lg mb-2">Want more inspiration?</h3>
+                <p className="text-muted-foreground text-sm mb-3">
+                  Watch D.J. Mersland break down the ii–IV–vi–V chord progression language 
+                  and discover the musical theory behind this tool.
+                </p>
+                <Button asChild size="sm" className="gap-2">
+                  <Link to="/about">
+                    <Sparkles className="h-4 w-4" />
+                    Explore More Inspiration
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </section>
     </main>
   );
