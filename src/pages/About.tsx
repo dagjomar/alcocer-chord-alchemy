@@ -33,25 +33,14 @@ export default function About() {
         </p>
       </header>
 
-      <section className="grid gap-6 md:grid-cols-3">
-        <Card className="md:col-span-2">
+      <section className="space-y-8">
+        {/* YouTube Section - Now larger and full width */}
+        <Card>
           <CardHeader>
-            <CardTitle className="text-xl md:text-2xl">Follow D.J. Mersland</CardTitle>
-          </CardHeader>
-          <CardContent className="flex flex-wrap gap-3">
-            <LinkButton href={LINKS.youtube}><Youtube /> YouTube</LinkButton>
-            <LinkButton href={LINKS.spotify}><Music2 /> Spotify</LinkButton>
-            <LinkButton href={LINKS.github}><Github /> GitHub</LinkButton>
-            <LinkButton href={LINKS.instagram}><Instagram /> Instagram</LinkButton>
-          </CardContent>
-        </Card>
-
-        <Card className="md:col-span-1">
-          <CardHeader>
-            <CardTitle className="text-xl">On YouTube</CardTitle>
+            <CardTitle className="text-2xl md:text-3xl">On YouTube</CardTitle>
           </CardHeader>
           <CardContent>
-            <AspectRatio ratio={16 / 9}>
+            <AspectRatio ratio={16 / 9} className="max-w-4xl mx-auto">
               <iframe
                 className="h-full w-full rounded-md"
                 src="https://www.youtube.com/embed/H-tqv602Mtg"
@@ -61,6 +50,19 @@ export default function About() {
                 allowFullScreen
               />
             </AspectRatio>
+          </CardContent>
+        </Card>
+
+        {/* Follow Section - Now underneath */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl md:text-3xl">Follow D.J. Mersland</CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-wrap gap-3">
+            <LinkButton href={LINKS.youtube}><Youtube /> YouTube</LinkButton>
+            <LinkButton href={LINKS.spotify}><Music2 /> Spotify</LinkButton>
+            <LinkButton href={LINKS.github}><Github /> GitHub</LinkButton>
+            <LinkButton href={LINKS.instagram}><Instagram /> Instagram</LinkButton>
           </CardContent>
         </Card>
       </section>
