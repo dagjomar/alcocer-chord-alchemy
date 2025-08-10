@@ -3,13 +3,7 @@ import { ExternalLink, Youtube, Github, Music2, Instagram } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-const LINKS: Partial<Record<string, string>> = {
-  youtube: "https://www.youtube.com/@djsquaredmusic86",
-  // Set your actual links below if available; undefined links are hidden automatically
-  spotify: undefined,
-  github: undefined,
-  instagram: undefined,
-};
+import { LINKS } from "@/lib/socialLinks";
 
 function LinkButton({ href, children }: { href?: string; children: React.ReactNode }) {
   if (!href) return null;
@@ -24,7 +18,7 @@ function LinkButton({ href, children }: { href?: string; children: React.ReactNo
 
 export default function About() {
   useEffect(() => {
-    document.title = "About | Idea Chord Progression Maker";
+    document.title = "More Inspiration | Idea Chord Progression Maker";
   }, []);
 
   return (

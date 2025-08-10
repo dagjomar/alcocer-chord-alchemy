@@ -18,11 +18,8 @@ export default function SiteHeader() {
           <NavLink to="/help" className={navLinkCls}>
             Help
           </NavLink>
-          <NavLink to="/about" className={navLinkCls}>
-            About
-          </NavLink>
-          <Button asChild variant="secondary" className="hidden sm:inline-flex">
-            <a href="#maker" aria-label="Jump to generator">Try it</a>
+          <Button asChild variant="secondary">
+            <NavLink to="/about">More inspiration</NavLink>
           </Button>
         </div>
       </nav>
