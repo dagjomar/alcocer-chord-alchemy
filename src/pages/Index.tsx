@@ -170,9 +170,6 @@ const Index = () => {
               <Display keyLabel={result?.key ?? "—"} progression={result?.progression ?? null} />
             </div>
 
-            <p className="mt-4 text-xs text-muted-foreground">
-              Tip: ii/IV are great starting points; V is the weakest start. No I chord—keep it floating.
-            </p>
           </div>
         </div>
       </section>
