@@ -22,7 +22,7 @@ function ChordTile({ name, roman }: { name: string; roman: string }) {
   return (
     <div className="group relative rounded-xl border bg-card/60 px-6 py-5 text-center shadow-sm transition-transform hover:-translate-y-0.5">
       <div className="absolute inset-0 rounded-xl opacity-0 transition-all group-hover:opacity-100 group-hover:shadow-[0_0_40px_0_hsl(var(--glow))]" />
-      <div className="text-xs uppercase tracking-widest text-muted-foreground">{roman}</div>
+      <div className="text-xs tracking-widest text-muted-foreground">{roman}</div>
       <div className="font-display text-4xl md:text-5xl leading-none text-accent drop-shadow-sm">{name}</div>
     </div>
   );
