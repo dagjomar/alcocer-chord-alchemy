@@ -1,73 +1,94 @@
-# Welcome to your Lovable project
+# "Alcocer Idea" Chord Generator
 
-## Project info
+**A dynamic chord generation and exploration tool for musicians and composers**
 
-**URL**: https://lovable.dev/projects/7d54ddb6-a1ea-45d6-b26b-fb79e7a2f0aa
+![Chord Generator Preview](./docs/chord-generator-preview-animation.gif)
 
-## How can I edit this code?
+## About
 
-There are several ways of editing your application.
+The "Alcocer Idea" Chord Generator is a simple web application that helps create chord progressions. It was built as a hobby project to easily generate some musical ideas when I get stuck with the same old patterns. This tool is inspired by Gibran Alcocer's "Idea" songs - those short, catchy chord progressions that get stuck in your head. The name "Alcocer Ideas" comes from that concept of simple but effective musical ideas.
 
-**Use Lovable**
+## Live Demo
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7d54ddb6-a1ea-45d6-b26b-fb79e7a2f0aa) and start prompting.
+🎵 **Try it live**: [https://alcocer-chord-alchemy.lovable.app/](https://alcocer-chord-alchemy.lovable.app/)
 
-Changes made via Lovable will be committed automatically to this repo.
+## Features
 
-**Use your preferred IDE**
+- Generates chord progressions
+- Simple web interface
+- Works on desktop and mobile
+- Built with React and TypeScript
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Tech Stack
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- React + TypeScript
+- Tailwind CSS + shadcn/ui components
+- Vite for building
+- Deployed on Lovable
 
-Follow these steps:
+## Getting Started
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Prerequisites
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- Node.js (version 18 or higher)
+- npm or yarn package manager
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Local Development
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/dagjomar/alcocer-chord-alchemy.git
+   cd alcocer-chord-alchemy
+   ```
 
-**Edit a file directly in GitHub**
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-**Use GitHub Codespaces**
+4. **Open your browser**
+   Navigate to `http://localhost:5173` to see the application running locally.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Available Scripts
 
-## What technologies are used for this project?
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
 
-This project is built with:
+## Contributing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Feel free to contribute if you find this useful! You can:
+- Report bugs or suggest features
+- Submit pull requests for improvements
+- Add new chord generation ideas
+- Improve the UI or add new features
 
-## How can I deploy this project?
+### How to Contribute
 
-Simply open [Lovable](https://lovable.dev/projects/7d54ddb6-a1ea-45d6-b26b-fb79e7a2f0aa) and click on Share -> Publish.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Commit your changes (`git commit -m 'Add amazing feature'`)
+5. Push to the branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
 
-## Can I connect a custom domain to my Lovable project?
+## License
 
-Yes, you can!
+This project is open source and available under the [LICENSE](LICENSE) file.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Acknowledgments
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Built with [Lovable](https://lovable.dev) for easy deployment
+- Help by [Cursor](https://www.cursor.com) for further development
+- UI components from [shadcn/ui](https://ui.shadcn.com/)
+- Inspired by Gibran Alcocer's musical ideas
+- Brought to life by Dag Jomar Mersland
+
+---
+
+**Happy chord exploring! 🎼✨**
