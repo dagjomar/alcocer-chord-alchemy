@@ -42,12 +42,39 @@ function ChordTile({ name, roman, index, isNew }: { name: string; roman: string;
   );
 }
 
-function Display({ keyLabel, progression, isNew }: { keyLabel: string; progression: Progression | null; isNew: boolean }) {
+function Display({ keyLabel, progression, isNew, onGenerateRandom, onGenerateInKey, onGenerateStartChord, currentTab, isGenerating }: { 
+  keyLabel: string; 
+  progression: Progression | null; 
+  isNew: boolean;
+  onGenerateRandom: () => void;
+  onGenerateInKey: () => void;
+  onGenerateStartChord: () => void;
+  currentTab: "random" | "key" | "start";
+  isGenerating: boolean;
+}) {
   if (!progression) {
     return (
       <Card className="bg-gradient-to-b from-background to-secondary/30 animate-in fade-in-0 duration-500">
         <CardContent className="py-14">
-          <p className="text-center text-muted-foreground">Your progression will appear here.</p>
+          <div className="text-center space-y-4">
+            <p className="text-muted-foreground">Your progression will appear here.</p>
+            <Button 
+              onClick={() => {
+                if (currentTab === "random") onGenerateRandom();
+                else if (currentTab === "key") onGenerateInKey();
+                else if (currentTab === "start") onGenerateStartChord();
+              }}
+              className="gap-2 transition-all duration-200 hover:scale-105 active:scale-95"
+              disabled={isGenerating}
+            >
+              {isGenerating ? (
+                <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+              ) : (
+                <Shuffle className="h-4 w-4" />
+              )}
+              {isGenerating ? 'Generating...' : 'Generate Progression'}
+            </Button>
+          </div>
         </CardContent>
       </Card>
     );
@@ -246,6 +273,11 @@ const Index = () => {
                 keyLabel={result?.key ?? "—"} 
                 progression={result?.progression ?? null} 
                 isNew={isNewProgression}
+                onGenerateRandom={handleRandom}
+                onGenerateInKey={handleInKey}
+                onGenerateStartChord={handleStartChord}
+                currentTab={tab}
+                isGenerating={isGenerating}
               />
             </div>
 
