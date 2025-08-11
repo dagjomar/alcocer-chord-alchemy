@@ -41,7 +41,12 @@ function Display({ keyLabel, progression }: { keyLabel: string; progression: Pro
   return (
     <Card className="bg-gradient-to-b from-background/40 to-secondary/30">
       <CardContent className="py-8">
-        <p className="mb-6 text-center text-sm text-muted-foreground">Key: <span className="font-medium">{keyLabel}</span></p>
+        <div className="mb-8 text-center">
+          <div className="inline-flex items-center justify-center gap-3 -ml-8">
+            <span className="text-sm font-medium text-muted-foreground tracking-wider leading-none pt-1">KEY</span>
+            <span className="text-3xl font-bold font-display drop-shadow-sm leading-none" style={{color: 'white', textShadow: '0 1px 2px rgba(0,0,0,0.5)'}}>{keyLabel}</span>
+          </div>
+        </div>
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           {progression.map((c, i) => (
             <ChordTile key={i} name={c.name} roman={c.roman} />
