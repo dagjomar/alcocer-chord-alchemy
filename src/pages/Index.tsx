@@ -21,22 +21,23 @@ import { Link } from "react-router-dom";
 function ChordTile({ name, roman, index, isNew }: { name: string; roman: string; index: number; isNew: boolean }) {
   return (
     <div 
-      className={`group relative rounded-xl border bg-card/60 px-6 py-5 text-center shadow-sm transition-all duration-700 ease-out hover:-translate-y-1 hover:shadow-lg ${
+      className={`group relative rounded-xl border bg-card/60 px-6 py-5 text-center shadow-sm transition-all duration-700 ease-out ${
         isNew 
           ? 'animate-in slide-in-from-bottom-4 fade-in-0' 
           : 'animate-in slide-in-from-bottom-2 fade-in-0'
       }`}
       style={{
-        animationDelay: `${index * 150}ms`,
+        animationDelay: `${index * 120}ms`,
         animationFillMode: 'both'
       }}
     >
-      <div className="absolute inset-0 rounded-xl opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:shadow-[0_0_40px_0_hsl(var(--glow))]" />
-      <div className="text-xs tracking-widest text-muted-foreground transition-colors duration-200 group-hover:text-accent/80">{roman}</div>
-      <div className="font-display text-4xl md:text-5xl leading-none text-accent drop-shadow-sm transition-all duration-200 group-hover:scale-105 group-hover:drop-shadow-lg">{name}</div>
-      
-      {/* Subtle pulse effect on hover */}
-      <div className="absolute inset-0 rounded-xl bg-accent/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="absolute inset-0 rounded-xl opacity-100 transition-all duration-300 shadow-[0_0_50px_0_hsl(50_96%_78%/0.1)]" 
+           style={{
+             animation: isNew ? 'pulse-once 0.6s ease-out forwards' : 'none',
+             animationDelay: `${index * 120}ms`
+           }} />
+      <div className="text-xs tracking-widest text-muted-foreground transition-colors duration-200">{roman}</div>
+      <div className="font-display text-4xl md:text-5xl leading-none text-accent drop-shadow-sm transition-all duration-200">{name}</div>
     </div>
   );
 }
